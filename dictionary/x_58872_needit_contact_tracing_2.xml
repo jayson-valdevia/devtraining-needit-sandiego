@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Contact Tracing 2" max_length="40" name="x_58872_needit_contact_tracing_2" sizeclass="0" type="collection">
+        <element label="Assigned to" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element default="8dbca2e01b295110a106ece4604bcb56" label="Assignment Group" max_length="32" name="assignment_group" reference="sys_user_group" type="reference"/>
+        <element label="Contact Number" max_length="40" name="contact_number" type="phone_number_e164"/>
+        <element label="Employee Name" max_length="32" name="employee_name" reference="sys_user" type="reference"/>
+        <element choice="1" label="Location" max_length="40" name="location" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Cybergate  Tower 2" value="cybergateTower2"/>
+                <element inactive_on_update="false" label="Cybergate Tower 1" value="cybergateTower1"/>
+                <element inactive_on_update="false" label="Cybergate Tower 3" value="cybergateTower3"/>
+                <element inactive_on_update="false" label="Uptown Tower 1" value="uptownTower1"/>
+                <element inactive_on_update="false" label="Uptown Tower 2" value="uptownTower2"/>
+                <element inactive_on_update="false" label="Uptown Tower 3" value="uptownTower3"/>
+            </choice>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element choice="3" label="Symptoms" max_length="4000" name="symptoms" type="glide_list">
+            <choice>
+                <element inactive_on_update="false" label="Drgy Cough" value="dryCough"/>
+                <element inactive_on_update="false" label="Headache" value="headache"/>
+                <element inactive_on_update="false" label="Lack of Smell" value="lackOfSmell"/>
+                <element inactive_on_update="false" label="Lack of Taste" value="lackOfTaste"/>
+            </choice>
+        </element>
+        <element label="Temperature" max_length="40" name="temperature" type="float"/>
+        <element label="Travel History" max_length="40" name="travel_history" type="boolean"/>
+        <index name="index">
+            <element name="assignment_group"/>
+        </index>
+        <index name="index2">
+            <element name="employee_name"/>
+        </index>
+        <index name="index3">
+            <element name="assigned_to"/>
+        </index>
+    </element>
+</database>

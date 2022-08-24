@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Contact Tracing" max_length="40" name="x_58872_needit_contact_tracing" sizeclass="1" type="collection">
+        <element default="06970b6c1b695110a106ece4604bcb76" dependent="assignment_group" dependent_on_field="assignment_group" label="Assigned to" max_length="40" name="assigned_to" reference="sys_user" type="reference" use_dependent_field="true"/>
+        <element default="06970b6c1b695110a106ece4604bcb76" label="Assignment Group" max_length="40" name="assignment_group" reference="sys_user_group" type="reference"/>
+        <element label="Contact Number" max_length="40" name="contact_number" type="phone_number_e164"/>
+        <element label="Employee Name" max_length="40" name="employee_name" reference="sys_user" type="reference"/>
+        <element choice="1" label="Location" max_length="40" name="location" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="-- New choice --" value="-- New choice --"/>
+                <element inactive_on_update="false" label="Cybergate Tower 1" value="cybergateTower1"/>
+                <element inactive_on_update="false" label="Cybergate Tower 2" value="cybergateTower2"/>
+                <element inactive_on_update="false" label="Cybergate Tower 3" value="cybergateTower3"/>
+                <element inactive_on_update="false" label="Uptown Tower 2" value="uptownTower2"/>
+                <element inactive_on_update="false" label="Uptown Tower 3" value="uptownTower3"/>
+            </choice>
+        </element>
+        <element default="javascript:getNextObjNumberPadded();" dynamic_default_value="fdcb83a85f220100a9ad2572f2b4773c" label="Number" max_length="40" name="number" type="string" use_dynamic_default="true"/>
+        <element label="Symptoms" max_length="4000" name="symptoms" type="glide_list"/>
+        <element label="Temperature" max_length="40" name="temperature" type="float"/>
+        <element label="Travel History" max_length="40" name="travel_history" type="boolean"/>
+    </element>
+</database>
